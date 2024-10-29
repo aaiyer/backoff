@@ -79,8 +79,8 @@ where
 /// }
 ///
 /// # async fn go() {
-/// let err = backoff::future::retry_notify(Stop {}, f, |e, dur| {
-///     println!("Error happened at {:?}: {}", dur, e)
+/// let err = backoff::future::retry_notify(Stop {}, f, |e, retry_after| {
+///     println!("Error `{:?}`, will retry after {:?}", e, retry_after)
 /// })
 /// .await
 /// .err()

@@ -44,7 +44,7 @@ where
 /// # use backoff::{Error, retry_notify};
 /// # use backoff::backoff::Stop;
 /// # use std::time::Duration;
-/// let notify = |err, dur| { println!("Error happened at {:?}: {}", dur, err); };
+/// let notify = |err, retry_after| { println!("Error `{:?}`, will retry after {:?}", err, retry_after); };
 /// let f = || -> Result<(), Error<&str>> {
 ///     // Business logic...
 ///     Err(Error::transient("error"))
